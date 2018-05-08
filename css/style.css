@@ -1,7 +1,7 @@
 #sport-form {
     float: right;
     margin-right: 60px;
-    margin-top: 50px;
+    margin-top: 5px;
 }
 #search {
     width: 70%;
@@ -9,7 +9,11 @@
 
 #sportBtn {
     margin: 20px;
+
 }
 #addInput {
-    margin-top: 20px;
+    margin-top: 10px;
+}
+body {
+    padding: 5px;
 }

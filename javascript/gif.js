@@ -28,11 +28,13 @@ function displaySports()
             //create new div
             var sportDiv = $("<div>");
             //create text for rating
+            
             var p = $("<p>").text("Rating: " + results[i].rating);
             //create image for the gifs
             var sportsImg = $("<img>");
             //add class to sportsImg
             sportsImg.addClass("imgSports");
+            
             //attaching the img
             sportsImg.attr("src", results[i].images.fixed_height_still.url);
             sportsImg.attr("data-still", results[i].images.fixed_height_still.url);
@@ -41,7 +43,8 @@ function displaySports()
 
             sportDiv.append(p);
             sportDiv.append(sportsImg);
-            
+            sportDiv.css("float", "left");
+            sportDiv.css("width", "30%");            
 
             $("#sportGifs").prepend(sportDiv);
        
@@ -55,7 +58,9 @@ function renderButtons()
     //for loop to create the button
     for (var i=0; i<topics.length; i++) {
 
-        var a = $("<button>")
+        var a = $("<button>");
+        a.addClass("btn btn-primary");
+        a.css("margin", "5px");
         a.addClass("spt");
         a.attr("data-name", topics[i]);
         a.text(topics[i]);
