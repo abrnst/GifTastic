@@ -1,7 +1,7 @@
 
 
 
-var topics = ["baseball", "basketball", "soccer", "football", "hockey", "cricket", "golf"]
+var topics = ["baseball", "basketball", "soccer", "football", "hockey", "cricket", "golf", "tennis", "volleyball"]
 
 function displaySports()
 {
@@ -29,14 +29,13 @@ function displaySports()
             var sportDiv = $("<div>");
             //create text for rating
             var p = $("<p>").text("Rating: " + results[i].rating);
-                //create image for the 
+            //create image for the gifs
             var sportsImg = $("<img>");
+            //add class to sportsImg
             sportsImg.addClass("imgSports");
             //attaching the img
             sportsImg.attr("src", results[i].images.fixed_height_still.url);
-
-            
-            //sportsImg.attr("data-still", result[i].images.fixed_height_still.url);
+            sportsImg.attr("data-still", results[i].images.fixed_height_still.url);
             sportsImg.attr("data-animate", results[i].images.fixed_height.url);
             sportsImg.attr("data-state", "still");
 
@@ -79,20 +78,20 @@ $("#addInput").on("click", function(event){
 
 });
 //onlcick function to pause or start gif
-$(".imgSports").on("click", function()
+$("body").on("click", ".imgSports",  function()
 {
-
+    
     var state = $(this).attr("data-state");
 
-    if (state === "still") {
+    if (state === "still") 
+    {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
-    } else {
+    } else 
+    {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
-
     }
-
 });
 
 
