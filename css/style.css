@@ -2,9 +2,10 @@
     float: right;
     margin-right: 60px;
     margin-top: 5px;
+    height:1000px;
 }
 #search {
-    width: 70%;
+    width: 90%;
 }
 
 #sportBtn {
@@ -13,7 +14,11 @@
 }
 #addInput {
     margin-top: 10px;
+    
 }
 body {
     padding: 5px;
+}
+#sport-input {
+    font-weight: bold;
 }

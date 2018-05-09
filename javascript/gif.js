@@ -1,6 +1,6 @@
+$(document).ready(function(){
 
-
-
+//
 var topics = ["baseball", "basketball", "soccer", "football", "hockey", "cricket", "golf", "tennis", "volleyball"]
 
 function displaySports()
@@ -21,7 +21,7 @@ function displaySports()
        //storing data from ajax
        var results = response.data;
        console.log(response);
-       
+       //loop through the 10 gifs
        for (var i=0; i < results.length; i++)
        {
         
@@ -35,7 +35,7 @@ function displaySports()
             //add class to sportsImg
             sportsImg.addClass("imgSports");
             
-            //attaching the img
+            //adding the gif still and animated to the img's attributes
             sportsImg.attr("src", results[i].images.fixed_height_still.url);
             sportsImg.attr("data-still", results[i].images.fixed_height_still.url);
             sportsImg.attr("data-animate", results[i].images.fixed_height.url);
@@ -71,6 +71,7 @@ function renderButtons()
 }
 //onclick to add more buttons
 $("#addInput").on("click", function(event){
+    //prevents the page from loading.
     event.preventDefault()
     //grabs the input from the box
     var sport = $("#search").val().trim();
@@ -99,22 +100,13 @@ $("body").on("click", ".imgSports",  function()
     }
 });
 
-
-
-
 //onclick function to call the ajax function
 $(document).on("click", ".spt", displaySports);
-
-
-    
-
- 
-
-
 
 //functions calls the initial buttons
 renderButtons();
 
+});
 
 
 
